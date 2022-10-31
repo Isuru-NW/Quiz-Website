@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <link rel="icon" href="images/icon.png">
+  <title class="name">Store</title>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css"
+          href="style/font.css"/>
+
+ 
+     <style type="text/css">
+  .cart{
+        float: left; height: 100px; width: 100px;
+    }
+    .pic{
+      height: 210px; width: 220px;
+      float: left;
+    }
+    .div1{
+      float:left; width:0%;
+    }
+    .div2{
+        float: right; width: 100%;
+    }
+    .okbutton{
+      background: red;
+      color: white;
+      border: 0;
+      padding: 10px;
+      font-size: 18px;
+    }
+    .labels
+{
+clear:both;
+width:100px;
+text-align:left;
+font-size:20px;
+float:left;
+padding:10px;
+}
+.inputs
+{
+width:200px;
+text-align:left;
+float:left;
+padding:10px;
+}
+input[type=text]
+{
+ border:2px solid red;
+ padding:5px 10px;
+ border-radius:6px;
+}
+
+input[type=text]:focus
+{
+background-color:#00FF00;
+}
+
+form
+{
+margin-left:300px;
+}
+  </style>
+
+<script type="text/javascript">
+    var num = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        var products = ["Aladdin 2019", "Toy Story 4", "Cars 3", "Incredibles 2", "Mickey Mouse and Friends Bath Toys", "Lucky Plush - 101 Dalmatians","Aladdin Plush Doll", "Rajah Long Tail Plush", "Walt Disney World Hoodie", "Kids' Cinderella Castle Family Vacation Raglan Shirt", "Minnie Mouse Woven Dress for Girls", "Jasmine Nightshirt for Girls"];
+        var cost = [3, 3, 3, 3, 8, 9, 6, 10, 11, 7, 8, 6];
+		var total = "";
+        var price = 0;
+
+
+
+        var str = '<center><h1 style="clear:both;"><br><br><i>Please enter personal details to proceed to checkout </i></h1></center><form><label class="labels" for="firstName">First Name</label><input class="inputs" type="text" name="txtFName" id = "firstName" value = "" placeholder="Enter First Name" required /><label class="labels" for="lastName">Last Name</label><input class="inputs" type="text" name="txtLName" /><label class="labels" for="Address">Address</label><textarea class="inputs" name="txtAddress" /></textarea><label class="labels" for="Address">Email</label><input type="Email" class = "inputs" name="email" placeholder="Your Email" required /><label class="labels" for="bDate">Country</label><div class="inputs"><select class="inputs"><option>Sri Lanka</option><option>India</option><option>Pakistan</option><option>USA</option><option>UK</option><option>Japan</option><option>China</option><option>Korea</option><option>Spain</option></select></div><label class="labels" for="bDate">Terms</label><div class="inputs"><input type="checkBox" name="tterms" required />I agree to terms and conditions<br></div><div class="inputs" style="clear:both;"><input type="button" value="Place Order" style="background: red; color: white; border: 0; padding: 10px; font-size: 18px;" onclick="end()"></div></form><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>';
+
+
+        function add(x){
+           switch(x){
+            case "0": num[0]++; break;
+            case "1": num[1]++; break;
+            case "2": num[2]++; break;
+            case "3": num[3]++; break;
+            case "4": num[4]++; break;
+            case "5": num[5]++; break;
+			case "6": num[6]++; break;
+			case "7": num[7]++; break;
+			case "8": num[8]++; break;
+			case "9": num[9]++; break;
+			case "10": num[10]++; break;
+			case "11": num[11]++; break;
+           }
+           calTotal();
+        }
+        function minus(x){
+           switch(x){
+            case "0": if(num[0] > 0) num[0]--; break;
+            case "1": if(num[1] > 0) num[1]--; break;
+            case "2": if(num[2] > 0) num[2]--; break;
+            case "3": if(num[3] > 0) num[3]--; break;
+            case "4": if(num[4] > 0) num[4]--; break;
+            case "5": if(num[5] > 0) num[5]--; break;
+			case "6": if(num[6] > 0) num[6]--; break;
+			case "7": if(num[7] > 0) num[7]--; break;
+			case "8": if(num[8] > 0) num[8]--; break;
+			case "9": if(num[9] > 0) num[9]--; break;
+			case "10": if(num[10] > 0) num[10]--; break;
+			case "11": if(num[11] > 0) num[11]--; break;
+           }
+           calTotal();
+        }
+        function calTotal(){
+            total = ""; price = 0; output = "";
+            for(i = 0; i < num.length; i++) {
+                if(num[i] > 0){
+                    total += (num[i]) + " " + products[i] + ", ";
+                    price += cost[i]*(num[i]);
+					output += (num[i]) + " " + products[i] + " at a cost of  $" + cost[i] + " each\n";
+                }
+            }
+            print();
+        }
+        function print(){
+            document.getElementById("output").innerHTML = "<br><b>Your Order  :</b>" + total + "</br><b>Total Cost  :</b>$ " + price + ".00";
+        }
+        function next(){
+            document.getElementById("lingha").innerHTML = str;
+        }
+        function end(){
+           var n = document.getElementById("firstName").value;
+           for(nahu = 0; nahu < 6; nahu++){
+             total = total.replace("<br>", "\n");
+           }
+           if(n.length > 0){
+           	var finalstr = "Hello " + n + "\nYou have ordered: \n\n" + output + "\nTotal Cost is $ " + price + ".00";
+            if(confirm(finalstr)) document.location='storeThank.html';
+            else document.location='store.html';
+           }else{
+           	alert("please enter required fields");
+           	next();
+           }
+        }
+
+  </script>
+
+</head>
+
+
+<body style="zoom: 100%;" id="Body"  >
+
+  <div id="main">
+    <div id="header">
+      <div id="himage"></div><div id= "himage2"></div>
+      <div id="logo">
+        <div id="logo_text">
+          <h1><a href="Home.html" class="name"  style="font-family:'Walt Disney Script v4.1 Regular';font-weight:normal;font-size:56.5px">
+          &nbspDisney World</a></h1>
+          <p class="tagname">&nbsp &nbsp &nbspMost Magical Place in the World</p>
+        </div>
+     
+      </div>
+
+      <div id="menubar">
+        <ul id="menu">
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="">Game</a></li>
+          <li class="selected"><a href="store.html">Store</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    
+    </div>
+
+    <div></div>
+
+    <div id="site">
+
+     <div class="slideshow_bar"><a href=" /*Thumnails*/  ">
+
+
+<!-- <div style="width:90px;">
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div> -->
+
+
+</div></a>
+
+      <div id="details">
+
+
+        <!-- insert the page content here -->
+		 <div id="content_header"></div>
+    <div id = "lingha">
+    <div id="site_content">
+	
+	 <div class="div2">
+        <p id = "output"></p>
+        <input class = "okbutton" type="submit" value="Proceed with Order" onclick="next()">
+    </div>
+	
+	<br>
+
+
+
+      <div class="div1" style="margin:5%">
+      <table width="100%"   cellspacing="20">
+		<tr><th colspan="4"><center><h1><b>---------------------------------MOVIES---------------------------------</b></h1></center> </th></tr>
+        <tr style="background-color:#F8E2BD">
+          <td><h3><b>Aladdin 2019</b></h3>
+          <img class = "pic" src="images/dvd1.jpg" ><br>
+          <input class = "cart" type="image" src="images/cart+.png" / id = "t0" onclick="add('0')" value="t0">
+          <input class = "cart" type="image" src="images/cart-.png" / id = "f0" onclick="minus('0')" value="f0">
+          </td>
+          <td><h3><b>Toy Story 4</b></h3>
+          <img class = "pic" src="images/dvd2.jpg"><br>
+          <input class = "cart" type="image" src="images/cart+.png" / id = "t1" onclick="add('1')" value="t1">
+          <input class = "cart" type="image" src="images/cart-.png" / id = "f3" onclick="minus('1')" value="f1">
+          </td>
+		  <td><h3><b>Cars 3</b></h3>
+          <img class = "pic" src="images/dvd3.jpg"><br>
+          <input class = "cart" type="image" src="images/cart+.png" / id = "t1" onclick="add('2')" value="t1">
+          <input class = "cart" type="image" src="images/cart-.png" / id = "f3" onclick="minus('2')" value="f1">
+          </td>
+		  <td><h3><b>Incredibles 2</b></h3>
+          <img class = "pic" src="images/dvd4.jpg"><br>
+          <input class = "cart" type="image" src="images/cart+.png" / id = "t1" onclick="add('3')" value="t1">
+          <input class = "cart" type="image" src="images/cart-.png" / id = "f3" onclick="minus('3')" value="f1">
+          </td>
+        </tr>
+		<tr><th colspan="4"><center><h1><b>---------------------------------TOYS---------------------------------</b></h1></center> </th></tr>
+         <tr style="background-color:#D3F9F7">
+          <td><h3><b>Mickey Mouse and Friends Bath Toys</b></h3>
+          <img class = "pic" src="images/toy1.jpg"><br>
+          <input class = "cart" type="image" src="images/cart+.png" / id = "t2" onclick="add('4')" value="t2">
+          <input class = "cart" type="image" src="images/cart-.png" / id = "f3" onclick="minus('4')" value="f2">
+          </td>
+          <td><h3><b>Lucky Plush - 101 Dalmatians</b></h3>
+          <img class = "pic" src="images/toy2.jpeg"><br>
+          <input class = "cart" type="image" src="images/cart+.png" / id = "t3" onclick="add('5')" value="t3">
+          <input class = "cart" type="image" src="images/cart-.png" / id = "f3" onclick="minus('5')" value="f3">
+          </td>
+		   <td><h3><b>Aladdin Plush Doll </b></h3>
+          <img class = "pic" src="images/toy3.jpeg"><br>
+          <input class = "cart" type="image" src="images/cart+.png" / id = "t3" onclick="add('6')" value="t3">
+          <input class = "cart" type="image" src="images/cart-.png" / id = "f3" onclick="minus('6')" value="f3">
+          </td>
+		   <td><h3><b>Rajah Long Tail Plush</b></h3>
+          <img class = "pic" src="images/toy4.jpeg"><br>
+          <input class = "cart" type="image" src="images/cart+.png" / id = "t3" onclick="add('7')" value="t3">
+          <input class = "cart" type="image" src="images/cart-.png" / id = "f3" onclick="minus('7')" value="f3">
+          </td>
+        </tr>
+		<tr><th colspan="4"><center><h1><b>---------------------------------CLOTH & WEAR---------------------------------</b></h1></center> </th></tr>
+         <tr style="background-color:#F9D3ED">
+          <td><h3><b>Walt Disney World Hoodie</b></h3>
+          <img class = "pic" src="images/clo1.jpg"><br>
+          <input class = "cart" type="image" src="images/cart+.png" / id = "t4" onclick="add('8')" value="t4">
+          <input class = "cart" type="image" src="images/cart-.png" / id = "f4" onclick="minus('8')" value="f4">
+          </td>
+          <td><h3><b>Kids' Cinderella Castle Family Vacation Raglan Shirt</b></h3>
+          <img class = "pic" src="images/clo2.jpeg"><br>
+          <input class = "cart" type="image" src="images/cart+.png" / id = "t5" onclick="add('9')" value="t5">
+          <input class = "cart" type="image" src="images/cart-.png" / id = "f5" onclick="minus('9')" value="f5">
+          </td>
+		  <td><h3><b>Minnie Mouse Woven Dress for Girls</b></h3>
+          <img class = "pic" src="images/clo3.jpg"><br>
+          <input class = "cart" type="image" src="images/cart+.png" / id = "t5" onclick="add('10')" value="t5">
+          <input class = "cart" type="image" src="images/cart-.png" / id = "f5" onclick="minus('10')" value="f5">
+          </td>
+		  <td><h3><b>Jasmine Nightshirt for Girls</b></h3>
+          <img class = "pic" src="images/clo4.jpeg"><br>
+          <input class = "cart" type="image" src="images/cart+.png" / id = "t5" onclick="add('11')" value="t5">
+          <input class = "cart" type="image" src="images/cart-.png" / id = "f5" onclick="minus('11')" value="f5">
+          </td>
+        </tr>
+      </table>
+    </div>
+
+   
+    </div>
+    </div>
+		
+      </div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+      <p><a href="Home.html">Home</a> | <a href="page2.html">Game</a> | <a href="store.html">Store</a> | <a href="contact.html">Contact</a> 
+      <p>Copyright @<a href="Home.html"> DISNEY WORLD</a> | <a href="">About Us</a> | 2019-Jul | Created By -<a href="sahan.html">Sahan Amarasekara</a></p>
+    </div>
+  </div>
+  </body>
+  </html>
+

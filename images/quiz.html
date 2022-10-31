@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Disney quiz</title>
+
+<style>
+body{
+	width:1000px;
+	margin-left:150px;
+	background-color: none;
+	
+}
+
+
+.heading {
+	color: #dddddd;
+}
+
+.heading :hover {
+	color: blue;
+}
+
+.the_grid {
+	display: grid;
+	grid: auto auto auto auto auto auto;
+	
+}
+
+#myDIV {
+	margin: 25px;
+	padding: 25px;
+	width: 550px;
+	background-color: none;
+	float: right;
+	border: 2px solid #40bf40;
+	border-left: 5px solid #0080ff;
+}
+#button{
+}
+
+.ques {
+	font-family:Times, serif;
+	font-size: 20px;
+	color: 	#0040ff;
+}
+
+.ans {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #0080ff;
+}
+
+#Timer {
+	font-family: sans-serif;
+	font-size: 18px;
+	color: #D3D3D3	rgb(211,211,211);
+	background-color: #dddddd;
+	margin: 5px;
+	padding: 5px;
+}
+
+#sidebar {
+	position: absolute;
+	width: 320px;
+	height: 59%;
+	border: 2px solid green;
+	border-left: 5px solid green;
+	border-right: 3px solid #0080ff;
+	background-color: none;
+
+}
+
+#sidebar img{
+	width: 300px;
+	height: 150px;
+	display: block;
+	margin: 20px auto;
+	filter: brightness(100%);
+	transition: 0.5s;
+
+}
+#sidebar img:hover {
+	background-size: 90%;
+}
+
+#sidebar ul {
+	margin: 0;
+	padding: 0;	
+
+}
+
+#sidebar li {
+	list-style: none;
+	padding: 10px;
+
+}
+
+#sidebar li:hover {
+	background-color: rgb(220,220,220);
+}
+
+#sidebar a {
+	text-decoration: none;
+	color: rgb(30,144,255);
+	font-size: 20px;
+	font-family: sans-serif;
+}
+
+#sidebar2{
+	position: relative;
+    background-color: none;
+    border-radius: 8px;
+    border: 2px solid green;
+	border-left: 5px solid green;
+	border-right: 3px solid #0080ff;
+	width: 320px;
+	height: 200px;
+	float: left;
+	margin-top: 460px;
+	font-size: 1.1em;
+	font-family: sans-serif;
+}
+
+#content {
+	font-size: 1em;
+	margin-top: 2px;
+	padding: 5px;
+	color: rgb(0,100,0);
+}
+
+
+
+
+
+
+</style>
+
+
+</head>
+
+<body>
+
+<div class="grid">
+  <div id="myDIV" name="myDIV">
+    <form id="quiz" name="quiz">
+	  <div class="heading"><h1><center>Disney World Quiz</center></h1></div>
+      <div id="Timer">Quiz closes in  <span id="time">01 minutes 00 seconds</span></div>	
+
+	    <p class="ques">01. What is the year that Disney World opened?</p>
+          <p class="ans">
+		    <label><input type="radio" type="mc" name="question1" value="1971">1971</label><br>
+	        <label><input type="radio" type="mc" name="question1" value="1972">1972</label><br>
+	        <label><input type="radio" type="mc" name="question1" value="1970">1970</label><br>
+	        <label><input type="radio" type="mc" name="question1" value="1973">1973</label><br>
+		  </p>
+	  
+        <p class="ques">02. Where is Disney World?</p>
+           <p class="ans">
+		    <label><input type="radio" id="mc" name="question2" value="Australia">Australia</label><br>
+	        <label><input type="radio" id="mc" name="question2" value="Europe">Europe</label><br>
+	        <label><input type="radio" id="mc" name="question2" value="USA">USA</label><br>
+	        <label><input type="radio" id="mc" name="question2" value="England">England</label><br>
+           </p>
+    
+   	    <p class="ques">03. How many employees are working in Disney World?</p>
+           <p class="ans">
+		    <label><input type="radio" id="mc" name="question3" value="7400">7400</label><br>
+	        <label><input type="radio" id="mc" name="question3" value="74000">74000</label><br>
+	        <label><input type="radio" id="mc" name="question3" value="8500">8500</label><br>
+	        <label><input type="radio" id="mc" name="question3" value="85000">85000</label><br>	
+           </p>
+    
+	    <p class="ques">04. Who are the founders of Disney World?</p>
+           <p class="ans">
+		    <label><input type="radio" id="mc" name="question4" value="J. Marckram and Faf Disney">J. Marckram and Faf Disney</label><br>
+	        <label><input type="radio" id="mc" name="question4" value="T. Anderson and Bruce Starlin">T. Anderson and Bruce Starlin</label><br>
+     	    <label><input type="radio" id="mc" name="question4" value="Andrew Fleming and Chris Hamilton">Andrew Fleming and Chris Hamilton</label><br>
+	        <label><input type="radio" id="mc" name="question4" value="Walt and Roy Disney">Walt and Roy Disney</label><br>
+           </p>
+		
+	    <p class="ques">05. What is the annual profit of Disney World Company?</p>
+	       <p class="ans">
+    		<label><input type="radio" id="mc" name="question5" value="426 million dollars">426 million dollars</label><br>
+	    	<label><input type="radio" id="mc" name="question5" value="450 million dollars">450 million dollars</label><br>
+	   	    <label><input type="radio" id="mc" name="question5" value="474 million dollars">474 million dollars</label><br>
+            <label><input type="radio" id="mc" name="question5" value="499 million dollars">499 million dollars</label><br>
+		   </p>
+		
+	    <p class="ques">06. What is the first theme park to open in the Disne World?</p>
+	       <p class="ans">
+	     	<label><input type="radio" id="mc" name="question6" value="Magic Kingdom">Magic Kingdom</label><br>
+	    	<label><input type="radio" id="mc" name="question6" value="Epcot">Epcot</label><br>
+		    <label><input type="radio" id="mc" name="question6" value="Disney Animal Kingdom">Disney Animal Kingdom</label><br>
+	    	<label><input type="radio" id="mc" name="question6" value="Disney Typhoon Lagoon">Disney Typhoon Lagoon</label><br>
+	   	   </p>
+		
+	    <p class="ques">07. What is the future expansion project which is to be open in 2022?</p>
+	       <p class="ans">
+	    	<label><input type="radio" id="mc" name="question7" value="Disney Riviera Hotel">Disney Riviera Hotel</label><br>
+	    	<label><input type="radio" id="mc" name="question7" value="Star Wars: Galaxy Edge">Star Wars: Galaxy Edge"</label><br>
+	    	<label><input type="radio" id="mc" name="question7" value="Star Wars Hotel">Star Wars Hotel</label><br>
+	    	<label><input type="radio" id="mc" name="question7" value="Disney Lakeside Lodge">Disney Lakeside Lodge</label><br>
+		   </p>
+		
+	    <p class="ques">08. What is the four Diamond award winning Resort in Disney World?</p>
+	       <p class="ans">
+		    <label><input type="radio" id="mc" name="question8" value="Grand Luxxe Riviera Maga">Grand Luxxe Riviera Maga</label><br>
+	    	<label><input type="radio" id="mc" name="question8" value="Contemporary Resort Hotel">Contemporary Resort Hotel</label><br>
+	    	<label><input type="radio" id="mc" name="question8" value="Auberge Resort">Auberge Resort</label><br>
+	    	<label><input type="radio" id="mc" name="question8" value="Polynesian Village Resort">Polynesian Village Resort</label><br>
+		   </p>
+		
+	    <p class="ques">09. Where is the Spaceship Earth in Disney World?</p>
+	       <p class="ans">
+	    	<label><input type="radio" id="mc" name="question9" value="Epcot">Epcot</label><br>
+	        <label><input type="radio" id="mc" name="question9" value="Magic Kingdom">Magic Kingdom</label><br>
+	    	<label><input type="radio" id="mc" name="question9" value="Disney Typhoon Lagoon">Disney Typhoon Lagoon</label><br>
+	    	<label><input type="radio" id="mc" name="question9" value="Disney Animal Kingdom">Disney Animal Kingdom</label><br>
+	  	   </p>
+		
+	    <p class="ques">10. What is the year that Disney Hollywood Studios was opened?</p>
+	       <p class="ans">
+		    <label><input type="radio" id="mc" name="question10" value="1989">1989</label><br>
+	    	<label><input type="radio" id="mc" name="question10" value="1998">1998</label><br>
+	    	<label><input type="radio" id="mc" name="question10" value="1971">1971</label><br>
+	    	<label><input type="radio" id="mc" name="question10" value="1975">1975</label> <br>
+		   </p>
+
+	    <input id="button" type="button" value="I'm Finished" onclick="check();">	  
+      </div>	
+    </form>
+  </div>
+  <div id="submit">
+      <center><img id="pictures"></div>
+      <center><div id="after_submit"></div>
+      <p id="number_correct"></p>
+  </div>
+
+     <div id="time_end" style="display:none">
+	    <h2><center>Your time is over.</h2>
+        <button class="button" onclick="tryagain()"> Try again</button></center>
+     </div>
+  
+    <div id="sidebar">
+    <img src="logo2.jpg" alt="">
+      <ul>
+        <li><a href="">Home</a></li>
+	    <li><a href="https://lol.disney.com/games/fashion-games">Games</a></li>
+	    <li><a href="https://en.wikipedia.org/wiki/Walt_Disney_World">Disney Information</a></li>
+	    <li><a href="https://www.thewaltdisneycompany.com/">about</a></li>
+	    <li><a href="https://www.thewaltdisneycompany.com/">videos</a></li>
+      </ul>
+    </div>
+	
+  <div id="sidebar2">
+    <div id="content">
+	 <p>Latest News</p>
+	 <p>New Website launched on Disney. Take a look around and comment on Home page</p>
+	 <p>Date : 22.07.2019</p>
+    </div>
+  </div>
+
+</div>	
+
+</body>
+</html>
+
+
+
+<script>
+function check() {
+    var question1 = document.quiz.question1.value;
+	var question2 = document.quiz.question2.value;
+	var question3 = document.quiz.question3.value;
+	var question4 = document.quiz.question4.value;
+	var question5 = document.quiz.question5.value;
+	var question6 = document.quiz.question6.value;
+	var question7 = document.quiz.question7.value;
+    var question8 = document.quiz.question8.value;
+    var question9 = document.quiz.question9.value;
+    var question10 = document.quiz.question10.value;
+	
+	var correct = 0;
+	
+        
+		if (question1 == "1971") {
+            correct=correct+2;
+	}	else {correct=correct-1;} 
+		
+		if (question2 == "USA") {
+			correct=correct+2; 
+    
+	}   else {correct=correct-1;}
+        
+		if (question3 == "74000") {
+			correct=correct+2;
+    
+	}   else {correct=correct-1;}
+	    
+		if (question4 == "Walt and Roy Disney") {
+			correct=correct+2;
+    
+	}   else {correct=correct-1;}
+	    
+		if (question5 == "474 million dollars") {
+		    correct=correct+2;
+	
+	}   else {correct=correct-1;}
+        
+		if (question6 == "Magic Kingdom") {
+		    correct=correct+2;
+	
+	}   else {correct=correct-1;}
+	    
+		if (question7 == "Disney Lakeside Lodge") {
+		    correct=correct+2;
+	
+	}   else {correct=correct-1;}
+	    
+		if (question8 == "Contemporary Resort Hotel") {
+		    correct=correct+2;
+	
+	}   else {correct=correct-1;}
+	    
+		if (question9 == "Epcot") {
+		    correct=correct+2;
+	
+	}   else {correct=correct-1;}
+	    
+		if (question10 == "1989") {
+		    correct=correct+2;
+	
+	}   else {correct=correct-1;}
+	
+	var color = ["#5cd65c","#ffff4d","#ff1a1a"]	
+    var images = ["victory.gif","medium.gif","loss.gif"]
+	
+    var range;
+	    if (correct < 6) {
+		    range = 2;
+			
+		}
+	
+	    if (correct > 7) {
+		    range = 1;
+			
+		}
+	
+	    if (correct > 14) {
+		    range = 0;
+			
+		}
+		document.body.style.backgroundColor = color[range];
+	    document.getElementById("after_submit").style.visibility = "visible";
+		document.getElementById("number_correct").innerHTML = "You got " + correct +  " correct.";
+        document.getElementById("pictures").src = images[range];
+		
+    
+  var sub = document.getElementById("myDIV");
+  if (sub.style.display == "none") {
+    sub.style.display = "block";
+  } else {
+    sub.style.display = "none";
+  }	
+  
+  var sub1 = document.getElementById("sidebar");
+  if (sub1.style.display == "none") {
+    sub1.style.display = "block";
+  } else {
+    sub1.style.display = "none";
+  }
+  
+  var sub2 = document.getElementById("sidebar2");
+  if (sub2.style.display == "none") {
+    sub2.style.display = "block";
+  } else {
+    sub2.style.display = "none";
+  }
+  
+  
+}
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 2 ?"0" + minutes : minutes;
+        seconds = seconds < 2  ?"0" + seconds : seconds;
+
+        display.textContent = minutes+" minutes"+ " " + seconds+" seconds";
+		
+		        if (--timer < 0) {
+            timer = duration;
+
+document.getElementById('myDIV').style.display='none';
+document.getElementById('time_end').style.display='block';
+document.getElementById('sidebar').style.display='none';
+document.getElementById('sidebar2').style.display='none';
+        }
+    }, 1000);                                                            //1000 is for mili seconds. 1s=1000ms
+}
+
+
+
+window.onload = function () {
+    var oneMinute = 60 * 1,
+        display = document.querySelector('#time');
+        startTimer(oneMinute, display);
+	
+};
+function tryagain() {
+location.reload();                                                       //it is a syntax used to reload page.
+}
+
+
+</script>
+
+</body>
+</html>
+	
+	
+
+

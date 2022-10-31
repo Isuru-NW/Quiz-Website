@@ -1,0 +1,128 @@
+body{
+	width:1000px;
+	margin-left:150px;
+	background-color: none;
+	
+}
+
+
+.heading {
+	color: #dddddd;
+}
+
+.heading :hover {
+	color: blue;
+}
+
+.the_grid {
+	display: grid;
+	grid: auto auto auto auto auto auto;
+	
+}
+
+#myDIV {
+	margin: 25px;
+	padding: 25px;
+	width: 550px;
+	background-color: none;
+	float: right;
+	border: 2px solid #40bf40;
+	border-left: 5px solid #0080ff;
+}
+#button{
+}
+
+.ques {
+	font-family:Times, serif;
+	font-size: 20px;
+	color: 	#0040ff;
+}
+
+.ans {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #0080ff;
+}
+
+#Timer {
+	font-family: sans-serif;
+	font-size: 18px;
+	color: #D3D3D3	rgb(211,211,211);
+	background-color: #dddddd;
+	margin: 5px;
+	padding: 5px;
+}
+
+#sidebar {
+	position: absolute;
+	width: 320px;
+	height: 59%;
+	border: 2px solid green;
+	border-left: 5px solid green;
+	border-right: 3px solid #0080ff;
+	background-color: none;
+
+}
+
+#sidebar img{
+	width: 300px;
+	height: 150px;
+	display: block;
+	margin: 20px auto;
+	filter: brightness(100%);
+	transition: 0.5s;
+
+}
+#sidebar img:hover {
+	background-size: 90%;
+}
+
+#sidebar ul {
+	margin: 0;
+	padding: 0;	
+
+}
+
+#sidebar li {
+	list-style: none;
+	padding: 10px;
+
+}
+
+#sidebar li:hover {
+	background-color: rgb(220,220,220);
+}
+
+#sidebar a {
+	text-decoration: none;
+	color: rgb(30,144,255);
+	font-size: 20px;
+	font-family: sans-serif;
+}
+
+#sidebar2{
+	position: relative;
+    background-color: none;
+    border-radius: 8px;
+    border: 2px solid green;
+	border-left: 5px solid green;
+	border-right: 3px solid #0080ff;
+	width: 320px;
+	height: 200px;
+	float: left;
+	margin-top: 460px;
+	font-size: 1.1em;
+	font-family: sans-serif;
+}
+
+#content {
+	font-size: 1em;
+	margin-top: 2px;
+	padding: 5px;
+	color: rgb(0,100,0);
+}
+
+
+
+
+
